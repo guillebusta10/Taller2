@@ -9,7 +9,7 @@ public:
     void jugar();  
 
 private:
-    Tablero tablero;
+    Tablero* tablero;
     Jugador* jugador1;  
     Jugador* IA;
     Jugador* jugador2;  

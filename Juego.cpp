@@ -5,6 +5,7 @@ Juego::Juego() {
     jugador1 = new JugadorH("O","player1");
     IA = new JugadorIA("X");
     jugador2 = new JugadorH("X","player2");  
+    tablero=new Tablero();
     esTurnoJugador1 = true;
 }
 
@@ -19,26 +20,26 @@ void Juego::jugar() {
     cin >> opcion;
     if(opcion==1){
         while (true) {
-            tablero.mostrarTablero();
+            tablero->mostrarTablero();
 
             if (esTurnoJugador1) {
                 cout << "Tu turno" << endl;
-                jugador1->hacerMovimiento(tablero);  
+                jugador1->hacerMovimiento(*tablero);  
             } else {
                 cout << "Turno de IA" << endl;
-                IA->hacerMovimiento(tablero); 
+                IA->hacerMovimiento(*tablero); 
             }
             
-            if (tablero.ganador("X")) {
-                tablero.mostrarTablero();
+            if (tablero->ganador("X")) {
+                tablero->mostrarTablero();
                 cout << " LA IA GANA !!!!" << endl;
                 break;
-            } else if (tablero.ganador("O")) {
-                tablero.mostrarTablero();
+            } else if (tablero->ganador("O")) {
+                tablero->mostrarTablero();
                 cout << "TU GANAS !!!!" << endl;
                 break;
-            } else if (tablero.Tablerolleno()) {
-                tablero.mostrarTablero();
+            } else if (tablero->Tablerolleno()) {
+                tablero->mostrarTablero();
                 cout << "EMPATE" << endl;
                 break;
             }
@@ -47,26 +48,26 @@ void Juego::jugar() {
         }
     }else if(opcion==2){
         while (true) {
-            tablero.mostrarTablero();
+            tablero->mostrarTablero();
 
             if (esTurnoJugador1) {
                 cout << "Turno de jugador 1 (O)" << endl;
-                jugador1->hacerMovimiento(tablero);  
+                jugador1->hacerMovimiento(*tablero);  
             } else {
                 cout << "Turno de jugador 2 (X)" << endl;
-                jugador2->hacerMovimiento(tablero); 
+                jugador2->hacerMovimiento(*tablero); 
             }
             
-            if (tablero.ganador("X")) {
-                tablero.mostrarTablero();
+            if (tablero->ganador("X")) {
+                tablero->mostrarTablero();
                 cout << " JUGADOR 2 GANA !!!!" << endl;
                 break;
-            } else if (tablero.ganador("O")) {
-                tablero.mostrarTablero();
+            } else if (tablero->ganador("O")) {
+                tablero->mostrarTablero();
                 cout << " JUGADOR 1 GANA !!!!" << endl;
                 break;
-            } else if (tablero.Tablerolleno()) {
-                tablero.mostrarTablero();
+            } else if (tablero->Tablerolleno()) {
+                tablero->mostrarTablero();
                 cout << "EMPATE" << endl;
                 break;
             }
