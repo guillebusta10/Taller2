@@ -1,20 +1,19 @@
-#include "Jugador.h"
 #include <string>
 using namespace std;
-
+#pragma once
 class Tablero{
     private:
         string tablero[3][3];
-        Jugador *jugador1, *jugador2;
 
     public:
-        Tablero(Jugador *j1,Jugador *j2);
+        Tablero();
 
-        bool movimientos(int fila, int columna,Jugador *jugador);
+        void movimientos(int fila, int columna,string jugador);
         void mostrarTablero();
-        bool ganador();
+        bool ganador(string jugador);
         bool Tablerolleno();
-        
+        string obtenerCelda(int fila,int columna);
+        void deshacerMovimiento(int fila, int columna);
 
         
 };

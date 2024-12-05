@@ -1,19 +1,17 @@
-    
-
+#include "Tablero.h"  
 #include <string>
+#pragma once
 using namespace std;
 
- 
-class Jugador{
-private:
+class Jugador {
+protected:
     string simbolo;
-    string nombre; 
+    string nombre;
 
 public:
-    
     Jugador(string simbolo, string nombre);
-
     string getSimbolo();
-
-    string getNombre() ;
+    string getNombre();
+    virtual void hacerMovimiento(Tablero& tablero);  
+    virtual ~Jugador() {}
 };
