@@ -1,6 +1,7 @@
 #include "Juego.h"
 #include <iostream>
 using namespace std;
+//clase JUEGO, clase que implementa el menu e interacion con el programa
 Juego::Juego() {
     jugador1 = new JugadorH("O","player1");
     IA = new JugadorIA("X");
@@ -8,7 +9,7 @@ Juego::Juego() {
     tablero=new Tablero();
     esTurnoJugador1 = true;
 }
-
+// funcion de interaccion con el menu y juego en si
 void Juego::jugar() {
     int opcion=0;
     cout<<"BIENVENIDO AL JUEGO DEL GATO"<<endl;
@@ -74,6 +75,10 @@ void Juego::jugar() {
 
             esTurnoJugador1 = !esTurnoJugador1;  
         }
+        delete jugador1;
+        delete jugador2;
+        delete tablero;
+        delete IA;
     }else{
         cout<<"opcion invalida, ingrese nuevamente"<<endl;
         jugar();

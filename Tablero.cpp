@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Tablero.h"
 using namespace std;
-
+//clase tablero donde se crea un tablero por juego
 Tablero::Tablero()
 {
 
@@ -13,14 +13,14 @@ Tablero::Tablero()
     }
 
 }
-
+//se realizan los movimientos del jugador en el tablero para establecer la conexion de jugador y tablero 
 void Tablero::movimientos(int fila, int columna, string jugador)
 {
     if (fila >= 0 && fila < 3 && columna >= 0 && columna < 3 && tablero[fila][columna] == " ") {
         tablero[fila][columna] = jugador;
     }
 }
-
+//muestra el tablero, segun los movimientos que se realicen 
 void Tablero::mostrarTablero()
 {
     cout<<"\n";
@@ -39,7 +39,7 @@ void Tablero::mostrarTablero()
     }    
     cout<<"\n";
 }
-
+//verifica el ganador de cada partida
 bool Tablero::ganador(string jugador)
 {
     for (int i = 0; i < 3; i++) {
@@ -60,7 +60,7 @@ bool Tablero::ganador(string jugador)
     }
     return false;
 }
-
+//verifica si el tablero se encuentra completado 
 bool Tablero::Tablerolleno()
 {
     for (int i = 0; i < 3; i++) {
@@ -73,11 +73,12 @@ bool Tablero::Tablerolleno()
     return true;
 
 }
-
+// entrega una celda que se busque 
 string Tablero::obtenerCelda(int fila, int columna)
 {
     return tablero[fila][columna];
 }
+//deshace un movimiento que no sea optimo, se utiliza en la funcion minimax
 void Tablero::deshacerMovimiento(int fila, int col) {
     tablero[fila][col] = " ";
 }

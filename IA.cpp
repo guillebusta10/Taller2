@@ -2,9 +2,9 @@
 #include <iostream>
 #include <climits>  
 using namespace std;
-
+// clase que implementa funcionalidades de la IA
 IA::IA(string simbolo) : simbolo(simbolo) {}
-
+//funcion que establece el movimiento mas optimo.
 void IA::mejorMovimiento(Tablero& tablero) {
     int mejorValor = INT_MIN;
     int filaMejor = -1, colMejor = -1;
@@ -27,7 +27,7 @@ void IA::mejorMovimiento(Tablero& tablero) {
 
     tablero.movimientos(filaMejor, colMejor, simbolo);
 }
-
+//realiza la mejor puntuacion actual y minimiza la puntuacion del oponente
 int IA::minimax(Tablero& tablero, int profundidad, bool esMaximizar, int alpha, int beta) {
     if (tablero.ganador("X")) return 10 - profundidad;  
     if (tablero.ganador("O")) return profundidad - 10;  
