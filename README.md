@@ -1,5 +1,6 @@
 # Taller2
-para compilar el taller se debe escribir ./ejecutable.exe 
+para compilar el taller se debe escribir g++ -o ejecutable  main.cpp Jugador.cpp JugadorH.cpp JugadorIA.cpp IA.cpp Tablero.cpp Juego.cpp
+./ejecutable.exe 
 luego desplegara la opciones, si jugar con la ia o multijugador.
 al empezar el juego se debe ingresar primero la fila presionar enter y luego la columna.
 para crear una ia se implementaron algoritmos de minimax y poda alfa-beta.
