@@ -81,7 +81,8 @@ void Juego::jugar() {
         delete IA;
     }else{
         cout<<"opcion invalida, ingrese nuevamente"<<endl;
-        jugar();
+        
+        //jugar();
     }
 
 
